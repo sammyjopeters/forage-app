@@ -1,4 +1,6 @@
 Forage::Application.routes.draw do
+  resources :categories
+
   resources :listings
 
   resources :users
