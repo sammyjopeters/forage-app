@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goods_type: MyString
+  amount: 1
+  description: MyText
+  location: MyString
+  transaction_type: MyString
+  cost: 1
+  expiry: 2014-02-03 14:43:33
+  user_id: 1
+  pictures: MyString
+  location_state: MyString
+  sold: false
+  sold_to: MyString
+
+two:
+  goods_type: MyString
+  amount: 1
+  description: MyText
+  location: MyString
+  transaction_type: MyString
+  cost: 1
+  expiry: 2014-02-03 14:43:33
+  user_id: 1
+  pictures: MyString
+  location_state: MyString
+  sold: false
+  sold_to: MyString
