@@ -1,9 +1,13 @@
 Forage::Application.routes.draw do
+
+  resources :users, :shallow => true do
+    resources :listings
+  end
+
   resources :categories
+  resources :listings, :only => :index
+  resources :users, :only => :index
 
-  resources :listings
-
-  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
