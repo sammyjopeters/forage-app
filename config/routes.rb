@@ -8,6 +8,10 @@ Forage::Application.routes.draw do
   resources :listings, :only => :index
   resources :users, :only => :index
 
+  resources :pages
+
+  root 'application#index'
+  get ':action' => 'pages#action'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

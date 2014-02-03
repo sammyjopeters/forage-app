@@ -13,3 +13,75 @@
  */
 @import 'bootstrap';
 @import 'bootstrap/theme';
+
+p{
+	color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, em, a{
+	color: #fff;
+}
+
+.listview{
+	padding: 15px 10px 10px 10px;
+	border-bottom: 1px dotted #777777;
+}
+
+.listcontent{
+	margin-left: 165px;
+}
+
+.listimage{
+	padding: 10px;
+	float: left;
+}
+
+.listimage img{
+	width: 100px;
+}
+
+.customcontainer{
+	background-color: rgba(0, 0, 0, 0.7);
+	border-bottom-right-radius:2em;
+	border-bottom-left-radius:2em;
+	-moz-border-bottom-right-radius:2em;
+	-webkit-border-bottom-left-radius:2em;
+
+}
+
+.applicationbody{
+  background-image: url('homebg.jpg');
+  background-repeat:no-repeat;
+  background-color: #222222;
+  background-size: cover !important;
+}
+
+.footer{
+	margin: 0 auto;
+	width: 80%;
+	padding: 10px 25px;
+}
+
+.footer ul{
+	list-style: none;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+
+}
+
+.footer li:nth-child(odd){
+    margin: 5px 30px;
+    text-align: left;
+	
+}
+
+.footer li:nth-child(even){
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    margin: 5px 30px;
+    text-align: center;
+	
+}
+
