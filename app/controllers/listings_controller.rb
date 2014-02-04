@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :create]
   
@@ -10,6 +11,14 @@ class ListingsController < ApplicationController
       @listings = @user.listings
     else
       @listings = Listing.all
+    end
+    if params[:search_term].present?
+      search_term = "%#{params[:search_term]}%"
+      @listings = @listings.where("name like ?", search_term) 
+    end
+    if params[:suburb].present?
+      search_term = "%#{params[:suburb]}%"
+      @listings = @listings.where("location like ?", search_term) 
     end
   end
   # GET /listings/1
@@ -25,6 +34,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /listings
@@ -34,7 +44,7 @@ class ListingsController < ApplicationController
 
     respond_to do |format|
       if @listing.save
-        format.html { redirect_to @listing, notice: "Listing for #{@listing.goods_type} was successfully created." }
+        format.html { redirect_to @listing, notice: "Listing for #{@listing.name} was successfully created." }
         format.json { render action: 'show', status: :created, location: @listing }
       else
         format.html { render action: 'new' }
@@ -79,6 +89,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:goods_type, :amount, :description, :location, :transaction_type, :cost, :expiry, :user_id, :pictures, :location_state, :sold, :sold_to)
+      params.require(:listing).permit(:name, :amount, :description, :location, :transaction_type, :cost, :expiry, :user_id, :pictures, :location_state, :sold, :sold_to, :category_id)
     end
 end

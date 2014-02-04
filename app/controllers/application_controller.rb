@@ -10,5 +10,10 @@ class ApplicationController < ActionController::Base
   	else
   		redirect_to new_session_path, :notice => 'please login.'
   	end
+
+    def index
+      @results = Listings.find_by_name(params[:searchterm])
+    end
+
   end
 end

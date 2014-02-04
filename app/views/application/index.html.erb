@@ -1,3 +1,9 @@
 <h1> Welcome to Forage.</h1>
 
-<h2>Here's where you'd search, if I had it running yet. LOL </h2>
+<%= form_tag listings_path, method: :get do %>
+<p>I'm looking for... </p>
+<%= text_field_tag :search_term %>
+<p>In... </p>
+<%= text_field_tag :suburb %>
+<%= submit_tag 'Forage' %>
+<% end %>

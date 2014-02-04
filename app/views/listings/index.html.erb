@@ -8,7 +8,7 @@
           <%= image_tag listing.pictures %>
         </div>
         <div class="listcontent">
-        <h3><%= listing.goods_type %> x <%= listing.amount %> </h3>
+        <h3><%= listing.name %> x <%= listing.amount %> </h3>
         <em>Listed by <%= listing.user.username %> in <%= listing.location %>, <%= listing.location_state %></em>
         <br /><p><%= listing.transaction_type %></p>
         <p>Expires on <%= listing.expiry %></p>

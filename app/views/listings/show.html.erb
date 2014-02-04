@@ -1,64 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Goods type:</strong>
-  <%= @listing.goods_type %>
-</p>
+<div class="listingbanner" style="background-image: url('<%= @listing.pictures %>';">
+<div class="listingheading">
+<h1><%= @listing.name %></h1>
+<h2>offered by <%= @listing.user.username %></h2>
+</div>
+</div>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @listing.amount %>
-</p>
+<h3>
+  <%= @listing.amount %> <%= @listing.name%> located in <%= @listing.location %>, <%= @listing.location_state %>
+</h3>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @listing.location %>
-</p>
-
-<p>
-  <strong>Transaction type:</strong>
-  <%= @listing.transaction_type %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @listing.cost %>
-</p>
-
-<p>
-  <strong>Expiry:</strong>
+  <% if @listing.sold == true %>
+  <h3>This item is sold.</h3>
+  <% else %>
+  <p>
+  <strong>This listing is offered until:</strong>
   <%= @listing.expiry %>
+  </p>
+  <% end %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
-</p>
+  <p><strong><%= @listing.user.username %>'s <%= @listing.name %> is to <%= @listing.transaction_type %></strong></p>
+
+<% if @listing.cost != nil %>
+  <p><strong>Price offered:</strong><br />
+  $<%= @listing.cost %></p>
+<% end %>
+
+<p><%= @listing.description %></p>
 
 <p>
   <strong>Pictures:</strong>
-  <%= @listing.pictures %>
+  <%= image_tag @listing.pictures, :width => '300' %>
 </p>
 
-<p>
-  <strong>Location state:</strong>
-  <%= @listing.location_state %>
-</p>
 
-<p>
-  <strong>Sold:</strong>
-  <%= @listing.sold %>
-</p>
 
+<% if @listing.sold == true %>
 <p>
   <strong>Sold to:</strong>
   <%= @listing.sold_to %>
 </p>
+<% else %>
+<% end %>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

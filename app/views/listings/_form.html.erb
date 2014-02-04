@@ -13,8 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :goods_type %><br>
-    <%= f.text_field :goods_type %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
@@ -41,8 +45,7 @@
     <%= f.datetime_select :expiry %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id, :value => params[:id] %>
   </div>
   <div class="field">
     <%= f.label :pictures %><br>
@@ -53,12 +56,10 @@
     <%= f.text_field :location_state %>
   </div>
   <div class="field">
-    <%= f.label :sold %><br>
-    <%= f.check_box :sold %>
+    <% f.hidden_field :sold, :value => false %>
   </div>
   <div class="field">
-    <%= f.label :sold_to %><br>
-    <%= f.text_field :sold_to %>
+    <% f.hidden_field :sold_to, :value => 'No one yet!' %>
   </div>
   <div class="actions">
     <%= f.submit %>
