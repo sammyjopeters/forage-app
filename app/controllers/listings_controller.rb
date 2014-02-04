@@ -12,6 +12,7 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
+    
     if params[:search_term].present?
       search_term = "%#{params[:search_term]}%"
       @listings = @listings.where("name like ?", search_term) 

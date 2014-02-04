@@ -9,7 +9,7 @@
         </div>
         <div class="listcontent">
         <h3><%= listing.name %> x <%= listing.amount %> </h3>
-        <em>Listed by <%= listing.user.username %> in <%= listing.location %>, <%= listing.location_state %></em>
+        <em>Listed by <%= listing.user_id %> in <%= listing.location %>, <%= listing.location_state %></em>
         <br /><p><%= listing.transaction_type %></p>
         <p>Expires on <%= listing.expiry %></p>
         <h6><%= link_to 'View', listing_path(listing) %> | <%= link_to 'Edit', edit_listing_path(listing) %> | <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></h6>
