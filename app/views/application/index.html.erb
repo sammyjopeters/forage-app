@@ -1,9 +1,11 @@
-<h1> Welcome to Forage.</h1>
+<div class="homesearch">
 
 <%= form_tag listings_path, method: :get do %>
-<p>I'm looking for... </p>
-<%= text_field_tag :search_term %>
-<p>In... </p>
-<%= text_field_tag :suburb %>
-<%= submit_tag 'Forage' %>
+<h1>I'm looking for...
+<%= text_field_tag :search_term, 'something', :class => 'searchbar' %>
+in 
+<%= text_field_tag :suburb, 'Sydney', :class => 'searchbar' %><br /><br /></h1>
+<%= submit_tag 'Forage', :class => 'btn btn-go' %>
 <% end %>
+
+</div>

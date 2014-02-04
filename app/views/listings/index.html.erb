@@ -1,4 +1,16 @@
-<h1>Available produce:</h1>
+
+<%  @title = "All listings"
+
+    if user_signed_in? && @user.present?
+
+    @title = "#{@user.username}'s Listings"
+
+    end
+
+
+    %>
+<h1><%= @title %></h1>
+
 
 
 
@@ -9,10 +21,17 @@
         </div>
         <div class="listcontent">
         <h3><%= listing.name %> x <%= listing.amount %> </h3>
-        <em>Listed by <%= listing.user_id %> in <%= listing.location %>, <%= listing.location_state %></em>
+        <em>Listed by <%= listing.user.username if listing.user.present? %> in <%= listing.location %>, <%= listing.location_state %></em>
         <br /><p><%= listing.transaction_type %></p>
         <p>Expires on <%= listing.expiry %></p>
-        <h6><%= link_to 'View', listing_path(listing) %> | <%= link_to 'Edit', edit_listing_path(listing) %> | <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></h6>
+            <div class="btn-group">
+
+            <%= link_to 'View', listing_path(listing), :class => 'btn btn-info' %>
+            <% if user_signed_in? && current_user == listing.user %>
+                <%= link_to 'Edit', edit_listing_path(listing), :class => 'btn btn-success' %>
+                <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger'%>
+            <% end %>
+            </div>
         </div>
       
       </div>
