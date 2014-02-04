@@ -1,5 +1,6 @@
 Forage::Application.routes.draw do
 
+  devise_for :users
   resources :users, :shallow => true do
     resources :listings
   end
@@ -10,8 +11,10 @@ Forage::Application.routes.draw do
 
   resources :pages
 
-  root 'application#index'
+  
   get ':action' => 'pages#action'
+  
+  root 'application#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

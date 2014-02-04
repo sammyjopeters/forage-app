@@ -7,7 +7,7 @@
 
 <p>
   <strong>Email address:</strong>
-  <%= @user.email_address %>
+  <%= @user.email %>
 </p>
 
 <p>
@@ -37,7 +37,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @user.avatar %>
+  <%= image_tag @user.avatar, :width => 100 %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
