@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<div class="btn-group btn-group-sm">
+<%= link_to 'Show', listing_path(@listing), :class => 'btn btn-info' %> |
+<%= link_to 'Back', listings_path, :class => 'btn btn-default' %>
+</div>

@@ -49,11 +49,33 @@ h1, h2, h3, h4, h5, h6, em, a{
 
 }
 
+/* Applicaitionbody class used to overwrite Bootstrap's generic styles */
 .applicationbody{
   background-image: url('homebg.jpg');
   background-repeat:no-repeat;
   background-color: #222222;
   background-size: cover !important;
+  color: #FFF;
+}
+
+.applicationbody a{
+	text-decoration: none;
+	color: #FFF;
+}
+
+.applicationbody a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.applicationbody a:hover {
+	text-decoration: none;
+	color: #0F0;
+	background-color: none;
+}
+
+.applicationbody btn-default a {
+	color: #000;
 }
 
 .footer{

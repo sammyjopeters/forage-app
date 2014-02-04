@@ -21,4 +21,5 @@
 
 <br>
 
-<%= link_to "Make a new listing", new_user_listing_path(@user) if @user.present? %>
+
+<%= link_to "Make a new listing", new_user_listing_path(@user), :class => 'btn btn-default' if @user.present? %>
