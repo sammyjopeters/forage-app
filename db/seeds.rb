@@ -47,7 +47,7 @@ Category.create(
 
 
 Listing.create(
-	goods_type: 'Carrots',
+	name: 'Carrots',
 	amount: 6,
 	description: 'My carrot crop has done really well this year, and I\'ve got a 6 spare! They\'re an heirloom variety and are grown in a pesticide free environment! Pick up from my office.',
 	location: 'Panania',
