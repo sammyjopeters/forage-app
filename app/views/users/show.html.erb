@@ -2,7 +2,7 @@
 
 
 <div class='profile'>
-  <div class='profilepicture'><%= image_tag @user.avatar %></div>
+  <div class='profilepicture'><%= image_tag @user.avatar, :width => 300 %></div>
 
   <h2><%= @user.name %> <small>A. K. A <%= @user.username %></small></h2>
   <h3><%= @user.merchant_type %></h3>

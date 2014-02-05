@@ -3,16 +3,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!, except: [:index]
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  protected
 
-    # #takes you back to the page you were on once you've signed in.
-    # def after_sign_in_path_for(resource)
-    # request.env['omniauth.origin'] || stored_location_for(resource) || root_path
-    # end
-
-    # def after_sign_in_path_for(resource)
-    # user_listings_path(current_user.id)
-    # end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
+  end
 
 
 end
