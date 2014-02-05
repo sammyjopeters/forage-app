@@ -64,7 +64,7 @@ Listing.create(
 	)
 
 Listing.create(
-	goods_type: 'Cheese wheels',
+	name: 'Cheese wheels',
 	amount: 486,
 	description: 'I have 3 cheese factories I run in my spare time, and I\'m selling the excess!',
 	location: 'Ultimo',
