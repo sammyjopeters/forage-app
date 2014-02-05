@@ -1,11 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+
 <div class="listingbanner" style="background-image: url('<%= @listing.pictures %>');">
+<div class="listingbanneroverlay">
 <div class="listingheading">
 <h1><%= @listing.name %></h1>
-<h2>offered by <%= @listing.user_id %></h2>
+<h3>offered by <%= @listing.user.username %></h3>
 </div>
 </div>
+
+</div>
+
 
 <h3>
   <%= @listing.amount %> <%= @listing.name%> located in <%= @listing.location %>, <%= @listing.location_state %>
@@ -22,7 +27,7 @@
   <% end %>
 </p>
 
-  <p><strong><%= @listing.user_id %>'s <%= @listing.name %> is to <%= @listing.transaction_type %></strong></p>
+  <p><strong><%= @listing.user.username %>'s <%= @listing.name %> is to <%= @listing.transaction_type %></strong></p>
 
 <% if @listing.cost != nil %>
   <p><strong>Price offered:</strong><br />
@@ -32,7 +37,6 @@
 <p><%= @listing.description %></p>
 
 <p>
-  <strong>Pictures:</strong>
   <%= image_tag @listing.pictures, :width => '300' %>
 </p>
 

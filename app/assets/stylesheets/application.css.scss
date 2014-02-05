@@ -112,6 +112,7 @@ h1, h2, h3, h4, h5, h6, em, a{
 .loggedinavatar{
 	padding: 5px;
 	float: left;
+	margin: 0 auto;
 }
 
 
@@ -150,4 +151,12 @@ h1, h2, h3, h4, h5, h6, em, a{
 	padding: 15px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+.userpanel {
+	background-color: #000;
+	border: 1px dotted white;
+	padding: 15px;
+
+
 }

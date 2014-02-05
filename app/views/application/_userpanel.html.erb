@@ -1,16 +1,19 @@
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
+<div class="userpanel navbar-text pull-right">
 
-  <%= image_tag current_user.avatar, :width => 100, :class => 'loggedinavatar' %> <br /> 
-  Welcome, <strong><%= current_user.name %>!</strong><br />
-  <em><%= current_user.email %></em><br />
-  <%= link_to 'Account Settings', edit_user_registration_path, :class => 'navbar-link' %><br />
-  <%= link_to 'Profile Settings', edit_user_path(current_user.id) %><br />
-  <%= link_to 'See my listings', user_listings_path(current_user.id) %><br />
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><br />
+	  <% if user_signed_in? %>
+
+	  <%= image_tag current_user.avatar, :width => 100, :class => 'loggedinavatar' %> <br /> 
+	  Welcome, <strong><%= current_user.name %>!</strong><br />
+	  <em><%= current_user.email %></em><br />
+	  <%= link_to 'Account Settings', edit_user_registration_path, :class => 'navbar-link' %><br />
+	  <%= link_to 'Profile Settings', edit_user_path(current_user.id) %><br />
+	  <%= link_to 'See my listings', user_listings_path(current_user.id) %><br />
+	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><br />
 
 
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+	<% else %>
+	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+	  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+	<% end %>
+
+</div>
