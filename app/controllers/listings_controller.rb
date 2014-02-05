@@ -16,6 +16,9 @@ class ListingsController < ApplicationController
     if params[:search_term].present?
       search_term = "%#{params[:search_term]}%"
       @listings = @listings.where("name like ?", search_term) 
+      # if @listings == nil
+      # render text: "There aren't any listings that match #{:search_term} or #{:suburb}. Try again instead!" 
+      # end
     end
     if params[:suburb].present?
       search_term = "%#{params[:suburb]}%"

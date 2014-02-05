@@ -11,7 +11,7 @@
 
 </div>
 
-
+<div class="listingcontent">
 <h3>
   <%= @listing.amount %> <%= @listing.name%> located in <%= @listing.location %>, <%= @listing.location_state %>
 </h3>
@@ -50,5 +50,10 @@
 <% else %>
 <% end %>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<div class="btn-group">
+<%= link_to 'Edit', edit_listing_path(@listing), :class => 'btn btn-success' if user_signed_in? && current_user == @listing.user %>
+<%= link_to 'Back', listings_path, :class => 'btn btn-default' %>
+<%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' if user_signed_in? && current_user == @listing.user %>
+</div>
+
+</div>

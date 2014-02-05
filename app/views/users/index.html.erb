@@ -1,24 +1,18 @@
-<h1>Listing users</h1>
+<h1>Current Forage Members</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email address</th>
-      <th>Username</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% if user_signed_in? == false %>
+<p>Want to join in the fun? Feel free to <%= link_to "sign up!", new_user_registration_path %>
+<% end %>
+
+<table cellpadding="8" cellspacing="2">
+
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.username %>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= user.username %></td>
+        <td><%= user.merchant_type %></td>
+        <td><%= link_to 'View Profile', user, :class => 'btn btn-default' %></td>
       </tr>
     <% end %>
   </tbody>

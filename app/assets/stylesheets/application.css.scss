@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6, em, a{
 
 /* Applicaitionbody class used to overwrite Bootstrap's generic styles */
 .applicationbody{
-  background-image: url('homebg.jpg');
+  background-image: image-url('homebg.jpg');
   background-repeat:no-repeat;
   background-color: #222222;
   background-size: cover !important;
@@ -74,16 +74,12 @@ h1, h2, h3, h4, h5, h6, em, a{
 	color: #66aa00;
 }
 
-.applicationbody btn-default a {
-	color: #000;
-}
-
-
 
 .footer{
 	margin: 0 auto;
 	width: 80%;
 	padding: 10px 25px;
+	clear: both;
 }
 
 .footer ul{
@@ -159,4 +155,8 @@ h1, h2, h3, h4, h5, h6, em, a{
 	padding: 15px;
 
 
+}
+
+.formwrapper{
+	width: 25%;
 }
