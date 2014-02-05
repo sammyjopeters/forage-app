@@ -2,9 +2,9 @@
 
 <%= form_tag listings_path, method: :get do %>
 <h1>I'm looking for...
-<%= text_field_tag :search_term, 'something', :class => 'searchbar' %>
+<%= text_field_tag :search_term, nil, :class => 'searchbar', placeholder: 'Carrots' %>
 in 
-<%= text_field_tag :suburb, 'any place', :class => 'searchbar' %><br /><br /></h1>
+<%= text_field_tag :suburb, nil, :class => 'searchbar', placeholder: 'Sydney' %><br /><br /></h1>
 <%= submit_tag 'Forage', :class => 'btn btn-go' %>
 <% end %>
 
