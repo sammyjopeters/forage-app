@@ -10,27 +10,13 @@
 <body class="applicationbody">
 	<div class="container customcontainer">
 
+		<%= render partial: 'application/logo'%> 
 
-
-	<div class="brandholder">
-		<%= image_tag 'superlogo.png', :class => 'brand', :width => 150 %>
-
-			<div class="brand">
-			<h1 class="brandname">Forage</h1>
-			<h2 class="brandsubtitle">Find fresh.</h2>
-			</div>
-		</div>
-
-
-	<header>
+		<header>
 		
-
-			 <%= render partial: 'application/nav'%> 
-
-
+			 <%= render partial: 'application/nav'%> 	
 		
-		
-	</header>
+		</header>
 
 	<h1><%= @title %></h1>
 	
