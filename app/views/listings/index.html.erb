@@ -21,10 +21,10 @@
     <% @listings.each do |listing| %>
     <div class="listview">
         <div class="listimage">
-          <%= image_tag listing.pictures %>
+        <%= link_to (image_tag listing.pictures), listing_path(listing) %>
         </div>
         <div class="listcontent">
-        <h3><%= pluralize listing.amount, listing.name %></h3>
+        <h3><%= link_to (pluralize listing.amount, listing.name), listing_path(listing) %></h3>
         <em>Listed by <%= listing.user.username if listing.user.present? %> in <%= listing.location %>, <%= listing.location_state %></em>
         <br /><p><%= listing.transaction_type %></p>
         <p>Expires on <%= listing.expiry %></p>
