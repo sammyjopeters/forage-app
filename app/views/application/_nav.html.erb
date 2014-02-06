@@ -1,10 +1,33 @@
-<div class="brand"><%= image_tag 'superlogo.png', :width => 100 %>
-<h1 class="brandname">Forage</h1>
-<h3 class="brandsubtitle">Find fresh.</h3>
-</div>
 
-<ul class="nav nav-tabs">
-<li><%= link_to 'Home', root_path %></li>
-<li><%= link_to 'Members', users_path %></li>
-<li><%= link_to 'All Listings', listings_path %></li>
-</ul>
+	<div class="brandholder">
+		<%= image_tag 'superlogo.png', :class => 'brand', :width => 150 %>
+
+		<h1 class="brandname">Forage</h1>
+		<h2 class="brandsubtitle">Find fresh.</h2>
+		</div>
+
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid">
+
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><%= link_to 'Home', root_path %></li>
+				<li><%= link_to 'Members', users_path %></li>
+				<li><%= link_to 'All Listings', listings_path %></li>
+
+			</ul>
+		
+
+			<%= render partial: 'application/userpanel' %>
+		</div> <!-- navbar colapse -->
+	</div> <!-- end container fluid div -->
+</nav>
