@@ -23,24 +23,32 @@ h1, h2, h3, h4, h5, h6, em, a{
 	color: #fff;
 }
 
-.brandname{
-	color: #0F0;
-	font-family: 'Londrina Sketch', cursive;
-	
-}
+
 
 .brandholder{
-	width: 200px;
-	text-align: center;
+	width: 400px;
+	height: 150px;
 	margin: 0 auto;
+	text-align: justify;
 }
 
 .brand {
 	padding: 5px 0px 0px 5px;
+	float: left;
+}
+
+.brandname{
+	color: #0F0;
+	font-family: 'Londrina Sketch', cursive;
+	margin: 2px;
+	padding-top: 35px;
+	
 }
 
 .brandsubtitle{
 	font-family: 'Marmelad', cursive;
+	margin: 2px;
+
 }
 
 .listview{
