@@ -1,4 +1,4 @@
-<h1>Current Forage Members</h1>
+<%= @title = 'Current Forage Members' %>
 
 <% if user_signed_in? == false %>
 <p>Want to join in the fun? Feel free to <%= link_to "sign up!", new_user_registration_path %>

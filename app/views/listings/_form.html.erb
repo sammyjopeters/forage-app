@@ -29,30 +29,47 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= f.label :location, "Surburb and state where the buyer will pick up from..." %><br>
     <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :location_state %><br>
-    <%= f.text_field :location_state %>
+
+    <%= f.radio_button(:location_state, "NSW") %>
+    <%= f.label(:location_state, "NSW") %>
+    <%= f.radio_button(:location_state, "QLD") %>
+    <%= f.label(:location_state, "QLD") %>
+    <%= f.radio_button(:location_state, "NT") %>
+    <%= f.label(:location_state, "NT") %>
+    <%= f.radio_button(:location_state, "WA") %>
+    <%= f.label(:location_state, "WA") %>
+    <%= f.radio_button(:location_state, "SA") %>
+    <%= f.label(:location_state, "SA") %>
+    <%= f.radio_button(:location_state, "VIC") %>
+    <%= f.label(:location_state, "VIC") %>
+    <%= f.radio_button(:location_state, "ACT") %>
+    <%= f.label(:location_state, "ACT") %>
+
+
   </div>
   <div class="field">
     <%= f.label :transaction_type %><br>
-    <%= f.text_field :transaction_type %>
-  </div>
-  <div class="field">
-    <%= f.label :cost %><br>
+
+    <%= f.radio_button(:transaction_type, "grab") %>
+    <%= f.label(:transaction_type, "Grab (Giving away for free)") %><br />
+
+    <%= f.radio_button(:transaction_type, "swap") %>
+    <%= f.label(:transaction_type, "Swap for something else (specify in your description)") %><br />
+
+    <%= f.radio_button(:transaction_type, "buy") %>
+    <%= f.label(:transaction_type, "Sell for cash") %>
+    <%= f.label :cost, ' -- How much for? (Round to the nearest dollar)' %>
     <%= f.number_field :cost %>
-  </div>
+</div>
+
   <div class="field">
     <%= f.label :expiry %><br>
     <%= f.datetime_select :expiry %>
   </div>
   <div class="field">
-    <%= f.hidden_field :user_id, :value => params[:id] %>
-  </div>
-  <div class="field">
-    <%= f.label :pictures %><br>
+    <%= f.label :pictures, 'Add a picture of what you\'re offering!' %><br>
     <%= f.text_field :pictures %>
   </div>
   <div class="field">

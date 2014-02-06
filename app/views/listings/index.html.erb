@@ -5,11 +5,15 @@
 
     @title = "#{@user.username}'s Listings"
 
+    elsif (params[:search_term] || params[:suburb]).present?
+
+        @title = "#{pluralize @listings.size, 'Result'} for your Search...."
+
     end
 
 
     %>
-<h1><%= @title %></h1>
+
 
 
 
@@ -20,7 +24,7 @@
           <%= image_tag listing.pictures %>
         </div>
         <div class="listcontent">
-        <h3><%= listing.name %> x <%= listing.amount %> </h3>
+        <h3><%= pluralize listing.amount, listing.name %></h3>
         <em>Listed by <%= listing.user.username if listing.user.present? %> in <%= listing.location %>, <%= listing.location_state %></em>
         <br /><p><%= listing.transaction_type %></p>
         <p>Expires on <%= listing.expiry %></p>

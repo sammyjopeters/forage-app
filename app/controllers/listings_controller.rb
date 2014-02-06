@@ -12,18 +12,38 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
+    all_listing_count = @listings.count
     
     if params[:search_term].present?
       search_term = "%#{params[:search_term]}%"
-      @listings = @listings.where("name like ?", search_term) 
+      @listings = @listings.where("name ilike ?", search_term) 
       # if @listings == nil
-      # render text: "There aren't any listings that match #{:search_term} or #{:suburb}. Try again instead!" 
+      # render text: "" 
       # end
+      search_count = @listings.count
+
+
     end
     if params[:suburb].present?
       search_term = "%#{params[:suburb]}%"
-      @listings = @listings.where("location like ?", search_term) 
+      @listings = @listings.where("location ilike ?", search_term)
     end
+    final_count = @listings.count
+
+
+      if final_count == 0
+
+        flash.notice = "There aren't any listings that match '#{h params[:search_term]}' and '#{h params[:suburb]}'. <a href='/'>Try some different search terms</a> or check out <a href='/listings'>All Listings</a> instead. ".html_safe
+      
+        if search_count != 0 && params[:search_term].present?
+          flash.notice = "There aren't any listings that match '#{h params[:search_term]}' and '#{h params[:suburb]}' specifically. There are <a href='/listings?utf8=✓&search_term=#{params[:search_term]}&suburb=&commit=Forage'>#{search_count} #{pluralize 'listing', search_count} for just '#{h params[:search_term]}'</a> though! <a href='/'>Try some different search terms</a> or check out <a href='/listings'>All Listings</a> instead. ".html_safe
+        end
+
+      else 
+        
+      end
+
+
   end
   # GET /listings/1
   # GET /listings/1.json
@@ -33,7 +53,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @listing = @user.listings.new
+    @listing = current_user.listings.new
   end
 
   # GET /listings/1/edit
@@ -44,7 +64,7 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = @user.listings.new(listing_params)
+    @listing = current_user.listings.new(listing_params)
 
     respond_to do |format|
       if @listing.save

@@ -23,16 +23,36 @@
     <%= f.text_field :username, :class => 'form-control' %></p>
   </div>
   <div class="form-group">
-    <p><%= f.label :home_location %><br>
+    <p><%= f.label :home_location, 'Suburb you live in:' %><br>
     <%= f.text_field :home_location, :class => 'form-control' %></p>
   </div>
     <div class="form-group">
-    <p><%= f.label :home_state %><br>
-    <%= f.text_field :home_state, :class => 'form-control' %></p>
+    <p><%= f.label :home_state, 'State where you live:' %><br>
+    <%= f.radio_button(:home_state, "NSW") %>
+    <%= f.label(:home_state, "NSW") %>
+    <%= f.radio_button(:home_state, "QLD") %>
+    <%= f.label(:home_state, "QLD") %>
+    <%= f.radio_button(:home_state, "NT") %>
+    <%= f.label(:home_state, "NT") %><br />
+    <%= f.radio_button(:home_state, "WA") %>
+    <%= f.label(:home_state, "WA") %>
+    <%= f.radio_button(:home_state, "SA") %>
+    <%= f.label(:home_state, "SA") %>
+    <%= f.radio_button(:home_state, "VIC") %>
+    <%= f.label(:home_state, "VIC") %>
+    <%= f.radio_button(:home_state, "ACT") %>
+    <%= f.label(:home_state, "ACT") %>
   </div>
   <div class="form-group">
-    <p><%= f.label :merchant_type %><br>
-    <%= f.text_field :merchant_type, :class => 'form-control' %></p>
+  <p><%= f.label :merchant_type, "What kind of person describes you best?" %><br><br />
+      <%= f.radio_button(:merchant_type, "Gardener") %>
+      <%= label_tag(:merchant_type, "Casual Gardener/ Novice") %><br /><br />
+
+      <%= f.radio_button(:merchant_type, "Pro") %>
+      <%= label_tag(:merchant_type, "Pro gardener with lots of excess") %><br /><br />
+
+      <%= f.radio_button(:merchant_type, "Business owner") %>
+      <%= label_tag(:merchant_type, "Small business or local business owner") %>
   </div>
   <div class="form-group">
     <p><%= f.label :avatar %><br>
