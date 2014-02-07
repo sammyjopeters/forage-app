@@ -19,6 +19,8 @@
 		</header>
 
 	<h1><%= @title %></h1>
+
+	<%= content_for :filters %>
 	
 	<% if notice %>
   		<p class="alert alert-notice"><%= notice %></p>

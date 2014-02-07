@@ -15,8 +15,10 @@
     %>
 
 
-
-
+    <!-- render the filters menu, and make sure the notice for errors comes under this... -->
+    <% content_for :filters do %>
+    <%= render partial: 'listings/resultsmenu'%> 
+    <% end%>
 
     <% @listings.each do |listing| %>
     <div class="listview">

@@ -13,8 +13,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, 'What are you selling?' %><br>
+    <%= f.text_field :name, placeholder: 'EG Carrot' %>
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :size => "30x12", placeholder: 'Describe something about what you\'re listing... where it came from, whether you used pestides, if its an heirloom variety etc... ' %>
   </div>
   <div class="field">
     <%= f.label :location, "Surburb and state where the buyer will pick up from..." %><br>

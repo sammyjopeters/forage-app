@@ -1,19 +1,21 @@
 <%= @title = 'Contact & Feedback' %>
 
+<div class="formwrapper">
 <p>Forage is a work in progress - and we'd love to know if you've found anything wonky, have suggestions for new features, or simply want to tell us how well we've done!</p>
 <p>Use the form below to get in touch.</p>
 
 <%= form_tag root_path, :class => 'customform form-group', method: :get do %>
 <%= label_tag 'Your name' %>
-<%= text_field_tag :name, 'Your name here', :class => 'form-control'  %>
+<%= text_field_tag :name, nil, :class => 'form-control', placeholder: 'Your name here' %>
 
 <%= label_tag 'Your email address' %>
-<%= text_field_tag :name, 'something@something.com', :class => 'form-control'  %>
+<%= text_field_tag :name, nil, :class => 'form-control', placeholder: 'something@something.com' %>
 
 
-<%= label_tag 'Your message (be nice!)'%>
-<%= text_area_tag :message, 'Thanks for building Forage, it\'s great!', :class => 'form-control'  %>
+<%= label_tag 'Your message (be nice!)' %>
+<%= text_area_tag :message, nil, placeholder: 'Thanks for building Forage, it\'s great!', :class => 'form-control', :size => "30x10" %>
 
 <br /><br />
 <%= submit_tag 'Send', :class => 'btn btn_default' %>
 <% end %>
+</div>
