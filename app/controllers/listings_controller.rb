@@ -40,7 +40,7 @@ class ListingsController < ApplicationController
         flash.now.notice = "There aren't any listings that match '#{h params[:search_term]}' and '#{h params[:suburb]}'. <a href='/'>Try some different search terms</a> or check out <a href='/listings'>All Listings</a> instead. ".html_safe
       
         if search_count != 0 && params[:search_term].present?
-          flash.now.notice = "There aren't any listings that match '#{h params[:search_term]}' and '#{h params[:suburb]}' specifically. There are <a href='/listings?utf8=✓&search_term=#{params[:search_term]}&suburb=&commit=Forage'>#{search_count} #{pluralize 'listing', search_count} for just '#{h params[:search_term]}'</a> though! <a href='/'>Try some different search terms</a> or check out <a href='/listings'>All Listings</a> instead. ".html_safe
+          flash.now.notice = "There aren't any listings that match '#{h params[:search_term]}' and '#{h params[:suburb]}' specifically. There are <a href='/listings?utf8=✓&search_term=#{params[:search_term]}&suburb=&commit=Forage'>#{search_count} listings for just '#{h params[:search_term]}'</a> though! <a href='/'>Try some different search terms</a> or check out <a href='/listings'>All Listings</a> instead. ".html_safe
         end
 
       else 
