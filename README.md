@@ -6,7 +6,7 @@ Forage
 
 The latest stable version is hosted on [Heroku](http://forage-for.herokuapp.com)
 
-If you've got any questions or ideas to add to the goals? just ping me on Github.  
+If you've got any questions or ideas to add to the goals? just ping me on Github, or post on the [feedback/comments portal](https://forage-for.uservoice.com/) (hosted by Uservoice)  
 Want to try implementing a feature? Fork the repo and have a go.  
 
 Things you can do with Forage so far
