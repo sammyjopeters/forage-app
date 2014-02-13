@@ -47,8 +47,13 @@
   <strong>Sold to:</strong>
   <%= @listing.sold_to %>
 </p>
-<% else %>
+<% elsif current_user != @listing.user || current_user == nil %>
+<!-- not working yet, need to pass params -->
+<!--   <%= button_to 'Reserve & Collect', controller: '/pages', action: :orderConfirm, :method => get, :params => (user_id, listing_id, @listing.name), :class => 'btn btn-success' %><br /><br /> -->
+
 <% end %>
+
+
 
 <div class="btn-group">
 <%= link_to 'Edit', edit_listing_path(@listing), :class => 'btn btn-success' if user_signed_in? && current_user == @listing.user %>
